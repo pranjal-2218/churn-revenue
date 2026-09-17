@@ -27,16 +27,6 @@ def process_data(input_path: str, db_path: str):
     print("Encoding Churn column...")
     df['Churn'] = df['Churn'].map({'Yes': 1, 'No': 0})
 
-    print("Flagging outlier charges using IQR...")
-    # Using IQR on TotalCharges
-    Q1 = df['TotalCharges'].quantile(0.25)
-    Q3 = df['TotalCharges'].quantile(0.75)
-    IQR = Q3 - Q1
-    upper_bound = Q3 + 1.5 * IQR
-    
-    # We flag them without discarding
-    df['IsOutlierCharge'] = (df['TotalCharges'] > upper_bound).astype(int)
-    
     print(f"Saving to SQLite database at {db_path}...")
     # Ensure directory exists
     os.makedirs(os.path.dirname(db_path), exist_ok=True)

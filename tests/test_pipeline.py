@@ -15,7 +15,7 @@ def test_auth_login():
     with TestClient(app) as client:
         response = client.post(
             "/auth/login",
-            data={"username": "admin", "password": "password"}
+            data={"username": "admin", "password": "secure_password_456"}
         )
         assert response.status_code == 200
         assert "access_token" in response.json()
@@ -25,7 +25,7 @@ def test_api_predict():
         # Login to get token
         login_response = client.post(
             "/auth/login",
-            data={"username": "admin", "password": "password"}
+            data={"username": "admin", "password": "secure_password_456"}
         )
         token = login_response.json()["access_token"]
         
