@@ -1,4 +1,4 @@
-# Telco Churn Prediction System
+# Churn Revenue System
 
 ![Python Version](https://img.shields.io/badge/python-3.11-blue.svg)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)
@@ -8,7 +8,7 @@
 
 ## 1. Executive Summary
 
-The **Telco Churn Prediction System** is a robust, production-grade machine learning platform designed to identify at-risk customers and explain the precise drivers behind their churn probability. 
+The **Churn Revenue System** is a robust, production-grade machine learning platform designed to identify at-risk customers and explain the precise drivers behind their churn probability. 
 
 Its core value proposition lies in bridging the gap between advanced ML models and actionable business intelligence:
 - **Real-Time Prediction:** A highly concurrent FastAPI microservice delivering instant churn probability scoring.
